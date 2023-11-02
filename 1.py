@@ -113,11 +113,11 @@ def main(learning_rate , discount_rate ):
 x_val = np.arange(0.05, 1.05, 0.05).tolist()
 
 all_y_vals = []
-for discount_rate in range (3 , 10 , 2):
+for discount_rate in range (4 , 11 , 2):
     y_val = []
     for i in x_val:
         to_get_avg = []
-        for k in range(20):
+        for k in range(16):
             to_get_avg.append(main( i , discount_rate/10.0))
 
         y_val.append(np.mean(np.array(to_get_avg)))
@@ -140,7 +140,7 @@ file_.close()
 
     # Create the plot
 
-colors = ['blue' , 'red' , 'green' , '#FFA500']
+colors = ['#FFA500' , 'red' , 'green' , 'blue']
 i = 0
 for y_val in all_y_vals:
     plt.plot(x_val, y_val, linestyle='-' , color = colors[i])
